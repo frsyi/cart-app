@@ -20,8 +20,10 @@ export default function CartItem({ product }) {
             </p>
             <div className="flex items-center text-yellow-500 text-sm">
               <FaStar className="mr-1" />
-              <span>4 / 5</span>
-              <span className="ml-2 text-gray-500 text-xs">(120 reviews)</span>
+              <span>{product.rating?.rate} / 5</span>
+              <span className="ml-2 text-gray-500 text-xs">
+                ({product.rating?.count} reviews)
+              </span>
             </div>
             <p className="text-gray-700 font-medium">${product.price}</p>
           </div>
@@ -32,7 +34,8 @@ export default function CartItem({ product }) {
 
           <div className="text-center">
             <p className="text-lg text-gray-500">
-              Total: <span className="font-bold text-green-600">$123</span>
+              Total:{" "}
+              <span className="font-bold text-green-600">${product.price}</span>
             </p>
           </div>
         </div>
