@@ -1,12 +1,12 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
-import CartItem from "./components/CartItem";
+import CartList from "./components/CartList";
 
 function App() {
   return (
     <>
       <Navbar />
-      <CartItem />
+      <CartList />
     </>
   );
 }
