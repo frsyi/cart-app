@@ -1,4 +1,5 @@
 import { FaStar } from "react-icons/fa";
+import Counter from "./Counter";
 
 export default function CartItem() {
   return (
@@ -21,6 +22,16 @@ export default function CartItem() {
               <span className="ml-2 text-gray-500 text-xs">(120 reviews)</span>
             </div>
             <p className="text-gray-700 font-medium">$213</p>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-center space-y-3">
+          <Counter />
+
+          <div className="text-center">
+            <p className="text-lg text-gray-500">
+              Total: <span className="font-bold text-green-600">$123</span>
+            </p>
           </div>
         </div>
       </div>
