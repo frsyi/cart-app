@@ -5,6 +5,8 @@ export default function CartItem({ product, quantity, updateCartQuantity }) {
   const handleIncrease = () => updateCartQuantity(product.id, quantity + 1);
   const handleDecrease = () => updateCartQuantity(product.id, quantity - 1);
 
+  const totalPrice = (product.price * quantity).toFixed(2);
+
   return (
     <div className="p-6 space-y-6">
       <div className="flex items-center bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition justify-between">
@@ -42,7 +44,7 @@ export default function CartItem({ product, quantity, updateCartQuantity }) {
           <div className="text-center">
             <p className="text-lg text-gray-500">
               Total:{" "}
-              <span className="font-bold text-green-600">${product.price}</span>
+              <span className="font-bold text-green-600">${totalPrice}</span>
             </p>
           </div>
         </div>
