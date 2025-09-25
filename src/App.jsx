@@ -38,7 +38,7 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar totalItems={totalItems} />
       <main className="container mx-auto p-4 pt-6">
         <CartList
           products={products}
