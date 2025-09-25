@@ -11,7 +11,7 @@ export default function CartList({
         <CartItem
           key={p.id}
           product={p}
-          quantity={cartQuantity[p.id]}
+          quantity={cartQuantity[p.id] || 0}
           updateCartQuantity={updateCartQuantity}
         />
       ))}

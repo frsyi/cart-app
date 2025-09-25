@@ -2,6 +2,9 @@ import { FaStar } from "react-icons/fa";
 import Counter from "./Counter";
 
 export default function CartItem({ product, quantity, updateCartQuantity }) {
+  const handleIncrease = () => updateCartQuantity(product.id, quantity + 1);
+  const handleDecrease = () => updateCartQuantity(product.id, quantity - 1);
+
   return (
     <div className="p-6 space-y-6">
       <div className="flex items-center bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition justify-between">
@@ -30,7 +33,11 @@ export default function CartItem({ product, quantity, updateCartQuantity }) {
         </div>
 
         <div className="flex flex-col items-center space-y-3">
-          <Counter />
+          <Counter
+            quantity={quantity}
+            onIncrease={handleIncrease}
+            onDecrease={handleDecrease}
+          />
 
           <div className="text-center">
             <p className="text-lg text-gray-500">
