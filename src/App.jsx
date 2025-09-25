@@ -40,7 +40,11 @@ function App() {
     <>
       <Navbar />
       <main className="container mx-auto p-4 pt-6">
-        <CartList products={products} />
+        <CartList
+          products={products}
+          cartQuantity={cartQuantity}
+          updateCartQuantity={updateCartQuantity}
+        />
       </main>
     </>
   );

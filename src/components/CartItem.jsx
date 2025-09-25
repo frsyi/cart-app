@@ -1,7 +1,7 @@
 import { FaStar } from "react-icons/fa";
 import Counter from "./Counter";
 
-export default function CartItem({ product }) {
+export default function CartItem({ product, quantity, updateCartQuantity }) {
   return (
     <div className="p-6 space-y-6">
       <div className="flex items-center bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition justify-between">
