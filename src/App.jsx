@@ -61,7 +61,7 @@ function App() {
   };
 
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-900">
       <Navbar totalItems={totalItems} />
       <main className="container mx-auto p-4 pt-6">
         <CartList

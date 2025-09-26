@@ -8,33 +8,41 @@ export default function CartItem({ product, quantity, updateCartQuantity }) {
   const totalPrice = (product.price * quantity).toFixed(2);
 
   return (
-    <div className="p-6 space-y-6">
-      <div className="flex items-center bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition justify-between">
-        <div className="flex items-center">
+    <div className="px-4 sm:px-6 md:px-12 lg:px-24 my-4 mb-6">
+      <div
+        className="flex items-center bg-white p-4 rounded-lg shadow-md hover:shadow-xl 
+                      hover:-translate-y-1 
+                      transition-all duration-200 
+                      ease-in-out 
+                      justify-between"
+      >
+        <div className="flex items-center mb-4 md:mb-0">
           <img
             src={product.image}
             alt={product.title}
-            className="w-20 h-20 object-contain rounded-lg p-2 mr-4 bg-gray-50"
+            className="w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-lg p-2 mr-4 bg-gray-50"
           />
           <div>
-            <h2 className="font-semibold text-gray-800 line-clamp-1">
+            <h2 className="font-semibold text-gray-800 line-clamp-1 text-sm sm:text-base md:text-lg">
               {product.title}
             </h2>
-            <p className="text-sm text-gray-500 capitalize">
+            <p className="text-xs sm:text-sm text-gray-500 capitalize">
               {product.category}
             </p>
-            <div className="flex items-center text-yellow-500 text-sm">
+            <div className="flex items-center text-yellow-500 text-xs sm:text-sm">
               <FaStar className="mr-1" />
               <span>{product.rating?.rate} / 5</span>
-              <span className="ml-2 text-gray-500 text-xs">
+              <span className="ml-2 text-gray-500 text-[10px] sm:text-xs">
                 ({product.rating?.count} reviews)
               </span>
             </div>
-            <p className="text-gray-700 font-medium">${product.price}</p>
+            <p className="text-gray-700 font-medium text-sm sm:text-base">
+              ${product.price}
+            </p>
           </div>
         </div>
 
-        <div className="flex flex-col items-center space-y-3">
+        <div className="flex flex-col items-center space-y-2">
           <Counter
             quantity={quantity}
             onIncrease={handleIncrease}
@@ -42,7 +50,7 @@ export default function CartItem({ product, quantity, updateCartQuantity }) {
           />
 
           <div className="text-center">
-            <p className="text-lg text-gray-500">
+            <p className="text-sm sm:text-base text-gray-500">
               Total:{" "}
               <span className="font-bold text-green-600">${totalPrice}</span>
             </p>
