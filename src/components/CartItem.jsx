@@ -1,10 +1,13 @@
 import { FaStar } from "react-icons/fa";
 import Counter from "./Counter";
+import { useCart } from "../store/useCart";
 
-export default function CartItem({ product, quantity, updateCartQuantity }) {
+export default function CartItem({ product }) {
+  const quantity = useCart((state) => state.cartQuantity[product.id] || 0);
+  const updateCartQuantity = useCart((state) => state.updateCartQuantity);
+
   const handleIncrease = () => updateCartQuantity(product.id, quantity + 1);
   const handleDecrease = () => updateCartQuantity(product.id, quantity - 1);
-
   const totalPrice = (product.price * quantity).toFixed(2);
 
   return (

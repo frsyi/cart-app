@@ -1,8 +1,9 @@
-export default function FloatingCheckoutBar({
-  totalItems,
-  grandTotal,
-  onCheckout,
-}) {
+import { useCart } from "../store/useCart";
+
+export default function FloatingCheckoutBar({ onCheckout }) {
+  const totalItems = useCart((state) => state.getTotalItems());
+  const grandTotal = useCart((state) => state.getGrandTotal());
+
   if (totalItems <= 0) return null;
 
   return (

@@ -1,19 +1,17 @@
 import CartItem from "./CartItem";
+import { useCart } from "../store/useCart";
 
-export default function CartList({
-  products,
-  cartQuantity,
-  updateCartQuantity,
-}) {
+export default function CartList() {
+  const products = useCart((state) => state.products);
+
+  if (products.length === 0) {
+    return <div className="text-white text-center py-10">Loading...</div>;
+  }
+
   return (
     <div>
       {products.map((p) => (
-        <CartItem
-          key={p.id}
-          product={p}
-          quantity={cartQuantity[p.id] || 0}
-          updateCartQuantity={updateCartQuantity}
-        />
+        <CartItem key={p.id} product={p} />
       ))}
     </div>
   );

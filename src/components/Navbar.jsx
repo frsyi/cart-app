@@ -1,6 +1,9 @@
 import { MdShoppingCart } from "react-icons/md";
+import { useCart } from "../store/useCart";
 
-export default function Navbar({ totalItems }) {
+export default function Navbar() {
+  const totalItems = useCart((state) => state.getTotalItems());
+
   return (
     <nav className="sticky top-0 left-0 w-full z-50 bg-gradient-to-r from-[#0a002b] to-[#2a004f] shadow-lg">
       <div className="container mx-auto px-8 py-4 flex justify-between items-center">
